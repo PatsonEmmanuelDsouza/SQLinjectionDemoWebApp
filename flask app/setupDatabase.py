@@ -18,6 +18,15 @@ def setupDatabase():
             ])
             db.session.commit()
             print("Users added")
+            print(f"""Admin user and test user created.
+
+admin creds: 
+        u:patson
+        p:dubai2020!
+test user creds: 
+        u:sharafdg
+        p:passsw0rd!
+                  """)
             
         else:
             print("Users already exists.")
