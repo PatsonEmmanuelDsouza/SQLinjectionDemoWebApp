@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="jumbotron text-center bg-light p-5 rounded shadow">
+    <h1 class="display-5 fw-bold">Welcome to Tech4U B2B</h1>
+    <p class="lead">Your trusted platform for sourcing tech equipment in bulk.</p>
+    <hr class="my-4">
+    <p>Log in with the ID given to your business to explore inventory and enjoy exclusive dealer pricing.</p>
+
+    {% if not session.get('username') %}
+        <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Login</a>
+    {% endif %}
+
+    <a class="btn btn-primary btn-lg" href="{{ url_for('stock') }}" role="button">Check Stock</a>
+  </div>
+
+  <!--About us-->
+  <section class="mt-5">
+    <h2>About Us</h2>
+    <p>
+      At Tech4U B2B, we connect resellers and businesses with top-tier technology products, from laptops and networking gear to office essentials.
+      Backed by a reliable supply chain and transparent pricing, we aim to simplify your technology procurement process.
+    </p>
+  </section>
+
+<!-- what we offwer -->
+  <section class="mt-4">
+    <h2>What We Offer</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">- Bulk deals on new and refurbished tech equipment</li>
+      <li class="list-group-item">- Dedicated support for business clients</li>
+      <li class="list-group-item">- Secure transactions and account management</li>
+      <li class="list-group-item">- Fast and reliable shipping options</li>
+    </ul>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Stock List</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="d-flex mb-3">
+            {{ form.searchQuery(class="form-control me-2", placeholder="Search by stock name or manufacturer", id="searchBar") }}
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Stock Name</th>
+          <th>Manufacturer</th>
+          <th>In Stock</th>
+          <th>Price (AED)</th>
+          <th>Add to Cart</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in stocks %}
+        <tr>
+          <td>{{ item['id'] }}</td>
+          <td>{{ item['name'] }}</td>
+          <td>{{ item['manufacturer'] }}</td>
+          <td>{{ item['quantity'] }}</td>
+          <td>{{ item['price'] }}</td>
+          <td>
+            <div class="input-group input-group-sm">
+              <button class="btn btn-outline-secondary" type="button" disabled>-</button>
+              <input type="text" class="form-control text-center" value="0" style="max-width: 45px;" disabled>
+              <button class="btn btn-outline-secondary" type="button" disabled>+</button>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <!-- query box to display the query -->
+    <div id="query-box">
+        <strong>SQL Query used in search bar (demo purpose):</strong>
+        <p id="sql-query">SELECT * FROM stock WHERE name LIKE '%{search}%' OR manufacturer LIKE '%{search}%'</p>
+    </div>
+
+</div>
+
+<!-- update for query box -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchQuery = document.getElementById("searchBar");
+            const queryContent = document.getElementById("sql-query");
+
+            // query update function
+            function updateQuery() {
+                const search = searchQuery.value || "{search}";
+
+                let query = `SELECT * FROM stock WHERE name LIKE '%${search}%' OR manufacturer LIKE '%${search}%'`;
+
+                let index = query.indexOf('--');
+
+                if (index !== -1) {
+                let before = query.substring(0, index);
+                let after = query.substring(index); 
+                queryContent.innerHTML = `${before}<span class="comment">${after}</span>`;
+                } else {
+                queryContent.textContent = query;
+                }
+            }
+
+            updateQuery();
+
+            // update based on keyboard input
+            searchQuery.addEventListener("input", updateQuery);
+        });
+    </script>
+
+{% endblock %}

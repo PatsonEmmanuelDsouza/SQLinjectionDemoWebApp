@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="mb-4">Admin Panel</h1>
+
+  <div class="row">
+ 
+    <div class="col-md-6">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-primary text-white">
+          Add New User
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-success">Add User</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-md-6">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-warning">
+          Manage Stock
+        </div>
+        <div class="card-body">
+          <button class="btn btn-outline-primary mb-2 w-100">Add New Item</button>
+          <button class="btn btn-outline-secondary mb-2 w-100">Edit Existing Stock</button>
+          <button class="btn btn-outline-danger w-100">Remove Item</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm mb-4">
+        <div class="card-header bg-dark text-white">
+          Other Admin Actions
+        </div>
+        <div class="card-body">
+          <button class="btn btn-outline-info me-2">View All Users</button>
+          <button class="btn btn-outline-info me-2">Download Logs</button>
+          <button class="btn btn-outline-info">Reset Database</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
