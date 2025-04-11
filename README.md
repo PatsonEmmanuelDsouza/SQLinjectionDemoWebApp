@@ -24,18 +24,18 @@ Navigate to the 'flask app' directory and run:
    The following output should be generated during its first execution:
    ```bash
     Users added
-Admin user and test user created.
+    Admin user and test user created.
 
-admin creds: 
-        u:patson
-        p:dubai2020!
-test user creds: 
-        u:sharafdg
-        p:passsw0rd!
-                  
-Stock items added.
+    admin creds: 
+            u:patson
+            p:dubai2020!
+    test user creds: 
+            u:sharafdg
+            p:passsw0rd!
+                      
+    Stock items added.
 
-Database setup complete.
+    Database setup complete.
    ```
    This initializes the SQL database.
 
