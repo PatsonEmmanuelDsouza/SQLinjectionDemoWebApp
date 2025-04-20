@@ -7,6 +7,7 @@ This project demonstrates SQL injection vulnerabilities as part of an ethical ha
 ## Contributors  
 - Aryan R  
 - Patson D  
+- Abdirahim W
 
 ## Setup & Execution  
 
