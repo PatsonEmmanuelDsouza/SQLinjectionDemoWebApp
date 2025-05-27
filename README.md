@@ -8,6 +8,20 @@ This project demonstrates SQL injection vulnerabilities as part of an ethical ha
 - Aryan R  
 - Patson D  
 - Abdirahim W
+  
+## Platform Screen Shots
+### Home Page  
+![Home Page](images/homePage.jpeg)
+
+### Log In Page  
+![Log In Page](images/logIn.jpeg)
+
+### Admin Panel Interface  
+![Admin Panel](images/adminPanel.jpeg)
+
+### Inventory Page  
+![Inventory Page](images/inventory.jpeg)
+
 
 ## Setup & Execution  
 
